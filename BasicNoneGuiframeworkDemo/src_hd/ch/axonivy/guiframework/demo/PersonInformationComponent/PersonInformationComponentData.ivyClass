@@ -1,0 +1,4 @@
+PersonInformationComponentData #class
+ch.axonivy.guiframework.demo.PersonInformationComponent #namespace
+personInfo ch.axonivy.guiframework.demo.PersonInformation #field
+personInfo PERSISTENT #fieldModifier

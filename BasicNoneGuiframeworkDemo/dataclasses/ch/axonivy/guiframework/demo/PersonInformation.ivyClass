@@ -1,0 +1,20 @@
+PersonInformation #class
+ch.axonivy.guiframework.demo #namespace
+workAddress ch.axonivy.guiframework.demo.Address #field
+workAddress 'address of your office' #fieldComment
+workAddress PERSISTENT #fieldModifier
+homeAddress ch.axonivy.guiframework.demo.Address #field
+homeAddress 'address of your home' #fieldComment
+homeAddress PERSISTENT #fieldModifier
+firstName String #field
+firstName PERSISTENT #fieldModifier
+lastName String #field
+lastName PERSISTENT #fieldModifier
+entryDate java.util.Date #field
+entryDate PERSISTENT #fieldModifier
+leaveDate java.util.Date #field
+leaveDate PERSISTENT #fieldModifier
+age Integer #field
+age PERSISTENT #fieldModifier
+idNo String #field
+idNo PERSISTENT #fieldModifier

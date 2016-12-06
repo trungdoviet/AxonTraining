@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"      
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+      xmlns:ic="http://ivyteam.ch/jsf/component"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions"
+      xmlns:pm="http://primefaces.org/mobile">
+      
+  <cc:interface componentType="IvyComponent">
+   <!--@Fintech: Define datamodel key -->
+  </cc:interface>
+  
+  <cc:implementation>
+  <p:outputPanel id="addressContainer">
+   <!--@Fintech: Define gui listeners tag -->
+	    <h:panelGrid columns="2">
+			<p:outputLabel for="addressZip" value="Zip"></p:outputLabel>
+			<p:inputText id="addressZip" value="#{data.address.zip}" type="number"></p:inputText>			
+			<p:outputLabel for="addressCity" value="City"></p:outputLabel>
+			<p:inputText id="addressCity" value="#{data.address.city}"></p:inputText>				
+			<p:outputLabel for="addressCountry" value="Country"></p:outputLabel>
+			<p:selectOneMenu id="addressCountry" value="#{data.address.country}">
+				<f:selectItem itemLabel="Please Select" itemValue="" />
+	            <f:selectItems value="#{data.countries}" />
+			</p:selectOneMenu>				
+		</h:panelGrid>
+	</p:outputPanel>
+  </cc:implementation>
+</html>
