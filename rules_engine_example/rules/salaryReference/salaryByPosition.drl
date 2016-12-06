@@ -1,0 +1,22 @@
+import rules.engine.example.SalaryInvoice;
+
+rule "No value"
+	when
+		$invoice: SalaryInvoice(position == "")
+	then
+		$invoice.setBasicSalary(0);
+end
+
+rule "Basic salary Developer"
+	when
+		$invoice: SalaryInvoice(position == "Developer")
+	then
+		$invoice.setBasicSalary(120);
+end
+
+rule "Basic salary Scrum Master"
+	when
+		$invoice: SalaryInvoice(position == "SM")
+	then
+		$invoice.setBasicSalary(250);
+end

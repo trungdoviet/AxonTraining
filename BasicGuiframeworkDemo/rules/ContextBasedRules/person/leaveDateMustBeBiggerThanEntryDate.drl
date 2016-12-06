@@ -1,0 +1,14 @@
+import ch.axonivy.fintech.standard.guiframework.BaseMetaDto;
+import java.util.Date;
+
+rule "Leave Date must bigger than Entry Date"
+  when
+      $entryDate: BaseMetaDto(propertyName == "ContextBasedRules.person.entryDate" )
+      $leaveDate: BaseMetaDto(propertyName == "ContextBasedRules.person.leaveDate", 
+      								viewValue#Date <= $entryDate.viewValue#Date)
+  then
+  	$entryDate.setValid(false);
+	$leaveDate.setValid(false);
+	$leaveDate.setMessage("Leave Date must be bigger than entry date from Phu Truong");
+end
+

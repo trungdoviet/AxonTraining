@@ -1,0 +1,8 @@
+demoData #class
+rules.engine.example.demo #namespace
+firstName String #field
+firstName PERSISTENT #fieldModifier
+lastName String #field
+lastName PERSISTENT #fieldModifier
+middleName String #field
+middleName PERSISTENT #fieldModifier

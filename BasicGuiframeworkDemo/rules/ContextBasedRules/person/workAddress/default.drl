@@ -1,0 +1,9 @@
+import ch.axonivy.fintech.standard.guiframework.BaseMetaDto;
+
+rule "Overwriting rule"
+  when
+      $city: BaseMetaDto(propertyName == "ContextBasedRules.person.workAddress.city" )
+  then
+  	$city.setRequired(false);
+	
+end

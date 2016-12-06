@@ -1,0 +1,8 @@
+Address #class
+ch.axonivy.guiframework.demo #namespace
+zip Integer #field
+zip PERSISTENT #fieldModifier
+city String #field
+city PERSISTENT #fieldModifier
+country String #field
+country PERSISTENT #fieldModifier

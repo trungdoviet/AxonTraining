@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:pm="http://primefaces.org/mobile"
+	xmlns:gui="http://axonivy.com/gui/components">
+<h:body>
+	<ui:composition template="/layouts/basic.xhtml">
+	
+		<ui:define name="title">Demo Using Guiframework</ui:define>
+		<ui:define name="content">
+			<h:form id="form">
+				 <gui:eventListeners dataModel="#{data.personInfo}" rulesPackage="person" dialogData="#{data}" /> 
+					<h:outputText value="Person"></h:outputText>
+					<h:panelGrid columns="2">
+						<p:outputLabel for="personFirstname" value="Firstname"></p:outputLabel>
+						<p:inputText id="personFirstname" value="#{data.personInfo.firstName}" ></p:inputText>
+						<p:outputLabel for="personLastname" value="Lastname"></p:outputLabel>
+						<p:inputText id="personLastname" value="#{data.personInfo.lastName}"></p:inputText>
+						<p:outputLabel for="personAge" value="Age"></p:outputLabel>
+						<p:inputText id="personAge" value="#{data.personInfo.age}" type="number"></p:inputText>
+						 <p:outputLabel for="personIdNo" value="Id No"></p:outputLabel>
+						<p:inputText id="personIdNo" value="#{data.personInfo.idNo}" title="from CaoHoang"></p:inputText>
+						<p:outputLabel for="personEntryDate" value="Entry date"></p:outputLabel>
+						<p:calendar id="personEntryDate" value="#{data.personInfo.entryDate}"/>
+						<p:outputLabel for="personLeaveDate" value="Leave date"></p:outputLabel>
+						<p:calendar id="personLeaveDate" value="#{data.personInfo.leaveDate}"/>
+					</h:panelGrid>
+					<h:outputText value="Work Address"></h:outputText>
+					<ic:ch.axonivy.guiframework.demo.AddressComponent dataModel="#{data.personInfo.workAddress}">
+					</ic:ch.axonivy.guiframework.demo.AddressComponent>
+					<h:outputText value="Home Address"></h:outputText>
+					 <ic:ch.axonivy.guiframework.demo.AddressComponent dataModel="#{data.personInfo.homeAddress}">
+					</ic:ch.axonivy.guiframework.demo.AddressComponent>
+				<p:commandButton actionListener="#{logic.onSubmit}" value="Submit" update="form" icon="ui-icon-check" >
+				</p:commandButton> 
+			</h:form>
+		</ui:define>
+		
+		
+		
+		
+		<!-- JS & CSS -->
+		<ui:define name="css">
+			<ui:param name="cachedVersion" value="#{cachedVersionResolver.version}"></ui:param>
+			<h:outputScript library="ivy-webcontent" name="/resources/util/lodash.min.js?v=#{cachedVersion}" />
+			<h:outputScript library="ivy-webcontent" name="/resources/util/inputmask.bundle.js?v=#{cachedVersionResolver.version}" />
+			<h:outputScript library="ivy-webcontent" name="/resources/js/fintechHandlingComponent.js?v=#{cachedVersion}" />
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

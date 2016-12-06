@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:pm="http://primefaces.org/mobile">
+<h:body>
+			<h:form id="form">
+			<h3>Middle name example
+			</h3>
+			<hr/>
+			<h:panelGroup style="background-color:yellow" >
+			<h3>Before</h3>
+			<p:outputLabel value="First Name:" />
+			<p:inputText value="#{data.firstName}" />
+			<br />
+			
+					<p:outputLabel value="Last Name:" />
+			<p:inputText value="#{data.lastName}" />
+			<br />
+			</h:panelGroup>
+					<hr/>
+					<h:panelGroup>
+					<h3>After</h3><p:outputLabel value="First Name:" />
+		<p:inputText /><br />
+		<p:outputLabel value="Middle name:" style="background-color:yellow" />
+			<p:inputText value="#{data.middleName}" />
+			<br />
+		<p:outputLabel value="Last Name:" />
+			<p:inputText/>
+			<br />
+</h:panelGroup>
+	</h:form></h:body>
+</html>

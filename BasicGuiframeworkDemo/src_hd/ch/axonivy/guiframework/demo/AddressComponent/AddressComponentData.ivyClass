@@ -1,0 +1,6 @@
+AddressComponentData #class
+ch.axonivy.guiframework.demo.AddressComponent #namespace
+address ch.axonivy.guiframework.demo.Address #field
+address PERSISTENT #fieldModifier
+countries java.util.List<String> #field
+countries PERSISTENT #fieldModifier

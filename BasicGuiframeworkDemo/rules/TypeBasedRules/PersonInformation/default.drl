@@ -1,0 +1,18 @@
+import ch.axonivy.fintech.standard.guiframework.BaseMetaDto;
+
+rule "Default rule for person page when age is >= 18"
+  when
+      $age: BaseMetaDto(propertyName == "TypeBasedRules.PersonInformation.age", viewValue >= 18)
+      $idNo: BaseMetaDto(propertyName == "TypeBasedRules.PersonInformation.idNo")
+  then
+  	  $idNo.setRendered(true);
+  	  $idNo.setRequired(true);
+end
+
+rule "Default rule for person page when age < 18"
+  when
+      $age: BaseMetaDto(propertyName == "TypeBasedRules.PersonInformation.age", viewValue < 18 || viewValue == null)
+      $idNo: BaseMetaDto(propertyName == "TypeBasedRules.PersonInformation.idNo")
+  then
+  	  $idNo.setRendered(false);
+end

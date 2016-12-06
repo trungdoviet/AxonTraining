@@ -1,0 +1,15 @@
+// It is a package name, java classes from this package are automatically accessible.
+// package com.sample 
+
+// List any import classes here.
+// import data.model.Person;
+
+// Declare any global variables here
+dialect "mvel"
+
+rule "Rule Name"
+  when
+      // condition. e.g: $person : Person(income > 50000)
+  then
+      // action. e.g: $person.tax = 5%
+end

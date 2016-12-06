@@ -1,0 +1,8 @@
+import rules.engine.example.SalaryInvoice;
+
+rule "Calculate net salary"
+	when
+		$invoice: SalaryInvoice(basicSalary > 0)
+	then
+		$invoice.setNetSalary($invoice.getBasicSalary() * $invoice.getWorkingDay() * 0.8);
+end

@@ -1,0 +1,8 @@
+DemoRulesEngineData #class
+rules.engine.example.DemoRulesEngine #namespace
+invoice rules.engine.example.SalaryInvoice #field
+invoice PERSISTENT #fieldModifier
+salaryRuleBase ch.ivyteam.ivy.rule.engine.api.IRuleBase #field
+salaryRuleBase PERSISTENT #fieldModifier
+basicSalaryRuleBase ch.ivyteam.ivy.rule.engine.api.IRuleBase #field
+basicSalaryRuleBase PERSISTENT #fieldModifier

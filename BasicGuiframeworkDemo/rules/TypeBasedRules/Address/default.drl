@@ -1,0 +1,11 @@
+import ch.axonivy.fintech.standard.guiframework.BaseMetaDto;
+
+rule "Default rule for address component"
+  when
+      $city: BaseMetaDto(propertyName == "TypeBasedRules.Address.city")
+  then
+  $city.setRequired(true);
+  $city.setMaxLength(5);
+  //$city.setMinDate(2016,11,11);
+end
+

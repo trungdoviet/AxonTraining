@@ -1,0 +1,17 @@
+import ch.axonivy.fintech.standard.guiframework.BaseMetaDto;
+
+rule "Make home address be readonly if person >= 18 years old"
+  when
+  	$age: BaseMetaDto(propertyName == "ContextBasedRules.person.age", viewValue >= 18)
+      $homeAddress: BaseMetaDto(propertyName == "ContextBasedRules.person.homeAddress")
+  then
+  		$homeAddress.setReadonly(false);
+end
+
+rule "Make home address be readonly in case person < 18 years old"
+  when
+  	$age: BaseMetaDto(propertyName == "ContextBasedRules.person.age", viewValue < 18 || viewValue == null)
+      $homeAddress: BaseMetaDto(propertyName == "ContextBasedRules.person.homeAddress")
+  then
+  		$homeAddress.setReadonly(true);
+end
